@@ -1,0 +1,69 @@
+### 创建任务
+POST http://localhost:8080/tasks
+Content-Type: application/json
+
+{
+  "title": "Learn Spring Boot",
+  "description": "Build first REST API",
+  "completed": false
+}
+
+### 获取全部任务
+GET http://localhost:8080/tasks
+
+### 获取单个任务
+GET http://localhost:8080/tasks/9999
+
+### 更新任务
+PUT http://localhost:8080/tasks/1
+Content-Type: application/json
+
+{
+  "title": "Updated",
+  "description": "CRUD done",
+  "completed": true
+}
+
+### 删除任务
+DELETE http://localhost:8080/tasks/1
+
+
+
+### Validation test - should be 400
+POST http://localhost:8080/tasks
+Content-Type: application/json
+
+{
+  "title": "   ",
+  "description": "should fail",
+  "completed": false
+}
+
+### Create incomplete task
+POST http://localhost:8080/tasks
+Content-Type: application/json
+
+{
+  "title": "Task A",
+  "description": "incomplete",
+  "completed": false
+}
+
+### Create completed task
+POST http://localhost:8080/tasks
+Content-Type: application/json
+
+{
+  "title": "Task B",
+  "description": "completed",
+  "completed": true
+}
+
+### Get only completed
+GET http://localhost:8080/tasks?completed=true
+
+### Get only incomplete
+GET http://localhost:8080/tasks?completed=false
+
+### Get all (no filter)
+GET http://localhost:8080/tasks
