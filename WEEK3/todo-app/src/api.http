@@ -1,0 +1,24 @@
+### Ping
+GET http://localhost:8080/ping
+
+### Create task
+POST http://localhost:8080/tasks
+Content-Type: application/json
+
+{
+  "title": "learn jpa"
+}
+
+### List tasks
+GET http://localhost:8080/tasks
+
+### Update task
+PUT http://localhost:8080/tasks/1
+Content-Type: application/json
+
+{
+  "completed": true
+}
+
+### Delete task
+DELETE http://localhost:8080/tasks/1
